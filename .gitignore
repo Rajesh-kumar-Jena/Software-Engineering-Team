@@ -1,0 +1,27 @@
+# --- secrets: every local env file. Only .env.example is committed. ---
+.env
+.env.*
+!.env.example
+
+# --- python ---
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# --- node / frontend build output ---
+node_modules/
+dist/
+.vite/
+
+# --- run artefacts: logs, workspaces, scanner output, checkpoints ---
+*.log
+.langgraph_api/
+checkpoints.sqlite
+.dev-workspace/
+.scannerwork/
+
+# screenshots live in docs/images/, not next to the app
+frontend/*.png

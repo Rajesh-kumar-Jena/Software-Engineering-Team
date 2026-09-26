@@ -1,0 +1,28 @@
+# --- Orchestration & agent framework ---
+langgraph>=1.2,<2.0
+langgraph-checkpoint>=4.2,<5.0
+langchain-core>=1.6,<2.0
+
+# --- LLM backends (see config/settings.py: get_llm) ---
+# Local Ollama is the default and needs no credentials. Hosted providers are
+# used per-agent via AGENT_MODELS, for roles that need more capability than a
+# model small enough to fit on a local GPU can deliver.
+langchain-ollama>=1.1,<2.0
+ollama>=0.6,<1.0
+langchain-google-genai>=2.0,<3.0   # "gemini:" model specs
+# langchain-groq>=0.2,<1.0         # optional: "groq:" model specs
+
+# --- Configuration ---
+python-dotenv>=1.0,<2.0
+pydantic>=2.13,<3.0
+
+# --- Tools of record ---
+# GitHub, Jira and SonarQube are driven directly over their REST APIs rather
+# than through vendor SDKs, so one retry/dry-run policy in tools/__init__.py
+# covers all three (see that module's docstring).
+requests>=2.32,<3.0         # github_client, jira_client, SonarQube Web API
+httpx>=0.28,<1.0            # API/regression test client (QA Agent)
+playwright>=1.62,<2.0       # tools/testing_tools.py (UI tests, requires_ui only)
+
+# --- Local test execution (Developer self-validation) ---
+pytest>=8.3,<9.0
