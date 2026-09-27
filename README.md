@@ -1,4 +1,4 @@
-# devcrew
+## Autonomous Software Engineering Team
 
 **An autonomous software engineering team.** Five LLM agents take a business
 requirement from an empty backlog to merged code — a Product Manager writes the
